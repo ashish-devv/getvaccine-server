@@ -34,6 +34,12 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/linkforcron-job", (req, res) => {
+  res.json({
+    Date: new Date(),
+  });
+});
+
 app.get("/getDetail", (req, res) => {
   if (Object.keys(req.query).length === 0) {
     res.json({ code: 3, error: "Unknown Error" });
