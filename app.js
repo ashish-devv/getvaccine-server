@@ -27,6 +27,13 @@ const detailsSchema = new mongoose.Schema({
 
 const detailModel = new mongoose.model("detail", detailsSchema);
 
+app.get("/", (req, res) => {
+  res.json({
+    welcome: "Hey All ! welcome to GetVaccine Server",
+    Developer: "Ashish (githubid 👉 ashish-devv)",
+  });
+});
+
 app.get("/getDetail", (req, res) => {
   if (Object.keys(req.query).length === 0) {
     res.json({ code: 3, error: "Unknown Error" });
